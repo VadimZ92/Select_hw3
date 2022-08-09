@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS GenreExecutor (
 CREATE TABLE IF NOT EXISTS Album (
 		Id SERIAL PRIMARY KEY,
 		Name VARCHAR(40) NOT NULL,
-		Year_of_release date NOT NULL 
+		Year_of_release INTEGER NOT NULL 
 );
 
 CREATE TABLE IF NOT EXISTS ExecutorAlbum (
@@ -31,14 +31,14 @@ CREATE TABLE IF NOT EXISTS ExecutorAlbum (
 CREATE TABLE IF NOT EXISTS Track (
 		Id SERIAL PRIMARY KEY,
 		Title VARCHAR(40) NOT NULL,
-		Duration numeric,
+		Duration INTEGER,
 		Album_id INTEGER NOT NULL REFERENCES Album(Id)
 );
 
 CREATE TABLE IF NOT EXISTS Comparation (
 		Id SERIAL PRIMARY KEY,
 		Title VARCHAR(40) NOT NULL,
-		year_of_issue date NOT NULL
+		year_of_issue INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS ComparationTrack (
